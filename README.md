@@ -1,4 +1,13 @@
 <p align="center">
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-0-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-0-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 <img height="140" src="media/unmodal.png" alt="React Unmodal Banner" align="center" />
 </p>
 
@@ -9,7 +18,13 @@
 
 <br />
 
-<!-- TODO: Badges -->
+<div align="center">
+
+[![GitHub Actions](https://img.shields.io/github/workflow/status/thiagozf/react-unmodal/react-unmodal%20tests?style=flat-square&labelColor=4147dc&logo=github&logoColor=white)](https://github.com/thiagozf/react-unmodal/actions?query=workflow%3A%22react-unmodal+tests%22)
+![NPM bundle size](https://img.shields.io/bundlephobia/minzip/react-unmodal?color=4147dc&logoColor=ffffff&style=flat-square)
+[![Twitter Badge](https://img.shields.io/badge/%23ReactUnmodal-4147dc?style=flat-square&labelColor=4147dc&logo=twitter&logoColor=white)](https://twitter.com/intent/tweet?button_hashtag=ReactUnmodal)
+
+</div>
 
 <br/>
 
@@ -106,18 +121,22 @@ function App() {
 }
 ```
 
-# Contributors ✨
+## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/thiagozf"><img src="https://avatars.githubusercontent.com/u/4684137?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Thiago Zanivan</b></sub></a><br /><a href="https://github.com/thiagozf/react-unmodal/commits?author=thiagozf" title="Code">💻</a></td>
+  </tr>
+</table>
+
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
-
-<!-- Force 3 -->
