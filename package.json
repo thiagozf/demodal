@@ -1,6 +1,6 @@
 {
   "name": "react-unmodal",
-  "version": "1.0.0-semantic-release",
+  "version": "0.0.0-development",
   "description": "Hooks for managing, caching and syncing asynchronous and remote data in React",
   "author": "thiagozf",
   "license": "MIT",
@@ -16,14 +16,13 @@
   "module": "es/index.js",
   "sideEffects": [
     "es/index.js",
-    "es/react/index.js",
-    "es/react/setBatchUpdatesFn.js",
-    "es/react/setLogger.js",
-    "lib/index.js",
-    "lib/react/index.js",
-    "lib/react/setBatchUpdatesFn.js",
-    "lib/react/setLogger.js"
+    "lib/index.js"
   ],
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
   "scripts": {
     "test": "is-ci \"test:ci\" \"test:dev\"",
     "test:dev": "npm run test:types && npm run test:format && npm run test:eslint && jest --watch",
