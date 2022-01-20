@@ -11,9 +11,10 @@
 
 <div align="center">
 
-[![GitHub Actions](https://img.shields.io/github/workflow/status/thiagozf/react-unmodal/react-unmodal%20tests?style=flat-square&labelColor=4147dc&logo=github&logoColor=white)](https://github.com/thiagozf/react-unmodal/actions?query=workflow%3A%22react-unmodal+tests%22)
-![NPM bundle size](https://img.shields.io/bundlephobia/minzip/react-unmodal?color=4147dc&logoColor=ffffff&style=flat-square)
-[![Twitter Badge](https://img.shields.io/badge/%23ReactUnmodal-4147dc?style=flat-square&labelColor=4147dc&logo=twitter&logoColor=white)](https://twitter.com/intent/tweet?button_hashtag=ReactUnmodal)
+[![GitHub Actions](https://img.shields.io/github/workflow/status/thiagozf/react-unmodal/react-unmodal%20tests?style=for-the-badge&labelColor=4147dc&logo=github&logoColor=white)](https://github.com/thiagozf/react-unmodal/actions?query=workflow%3A%22react-unmodal+tests%22)
+![Coverage](https://img.shields.io/codecov/c/gh/thiagozf/react-unmodal?style=for-the-badge&labelColor=4147dc&logo=codecov&logoColor=white)
+![NPM bundle size](https://img.shields.io/bundlephobia/minzip/react-unmodal?style=for-the-badge&labelColor=4147dc&logo=github&logoColor=white)
+[![Twitter Badge](https://img.shields.io/badge/%23ReactUnmodal-4147dc?style=for-the-badge&labelColor=4147dc&logo=twitter&logoColor=white)](https://twitter.com/intent/tweet?button_hashtag=ReactUnmodal)
 
 </div>
 
