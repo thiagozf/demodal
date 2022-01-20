@@ -1,7 +1,7 @@
 {
   "name": "react-unmodal",
   "version": "0.0.0-development",
-  "description": "Hooks for managing, caching and syncing asynchronous and remote data in React",
+  "description": "Promise-based utility to control modal states in React",
   "author": "thiagozf",
   "license": "MIT",
   "repository": "thiagozf/react-unmodal",
