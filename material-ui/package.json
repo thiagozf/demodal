@@ -1,0 +1,6 @@
+{
+  "internal": true,
+  "main": "../lib/material-ui/index.js",
+  "module": "../es/material-ui/index.js",
+  "types": "../types/material-ui/index.d.ts"
+}

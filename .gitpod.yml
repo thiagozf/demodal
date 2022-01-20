@@ -1,0 +1,10 @@
+tasks:
+  - name: Auto Build
+    init: |
+      yarn install
+      gp sync-done boot
+    command: yarn run start
+
+ports:
+  - port: 3000
+    onOpen: open-preview
