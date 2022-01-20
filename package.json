@@ -43,11 +43,9 @@
     "watch:es": "rimraf ./es && babel --watch --extensions .ts,.tsx --ignore ./src/**/tests/**/* ./src --out-dir es",
     "watch:umd": "rimraf ./dist && cross-env NODE_ENV=production rollup -w -c && rollup-plugin-visualizer stats-react.json",
     "watch:types": "rimraf ./types && tsc --watch --project ./tsconfig.types.json && replace 'import type' 'import' ./types -r --silent && replace 'export type' 'export' ./types -r --silent",
-    "now-build": "yarn && cd www && yarn && yarn build",
     "prettier": "prettier \"{src,src/**,example/src,example/src/**}/*.{md,js,jsx,ts,tsx,json}\"",
     "start": "yarn watch",
-    "format": "yarn prettier --write",
-    "stats": "open ./stats.html"
+    "format": "yarn prettier --write"
   },
   "files": [
     "core",

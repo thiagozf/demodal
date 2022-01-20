@@ -1,9 +1,11 @@
-<img src="media/unmodal.png" alt="React Unmodal Banner" align="center" />
+<p align="center">
+<img height="140" src="media/unmodal.png" alt="React Unmodal Banner" align="center" />
+</p>
 
 <br />
 
 <div align="center"><strong>Promise-based utility to control modal states in React</strong></div>
-<div align="center">Tiny, zero-dependency library that easily integrates with your favorite UI library and allows you to use modals naturally in React</div>
+<div align="center">Zero-dependency library that easily integrates with your existing UI components and allows you to naturally use modals in React</div>
 
 <br />
 
@@ -14,15 +16,17 @@
 ## Quick Features
 
 - **Promise based**: open your modal with a simple function call and `await` for the result.
-- **Uncontrolled**: open/close your modal from anywhere in your code (even the modal itself).
+- **Uncontrolled**: open/close your modal from anywhere in the code (even inside the modal itself).
 - **Decoupled**: no need to import a modal component to use it. Modals can be managed by ID.
-- **Tiny**: zero-dependency to keep your bundle size under control: ~1.5kB.
+- **Tiny**: zero-dependency to keep your bundle size under control: `~1.5kB`.
 - **Easy integration**: easily integrate with any UI library.
 - **Lazy-loading**: delay the rendering of your modal component until it's open.
 
 ## Examples
 
 Try it on CodeSandbox or browse the [examples folder](https://github.com/thiagozf/react-unmodal/tree/main/examples).
+
+[![Unmodal Examples](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/thiagozf/react-unmodal/tree/main/examples/basic)
 
 ## Basic Usage
 
@@ -34,8 +38,6 @@ import MyModal from './MyModal'
 const result = await Unmodal.open(MyModal, { myModalProp: 'value' })
 // Do something with result
 ```
-
-[![Unmodal Examples](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/thiagozf/react-unmodal/tree/main/examples/simple)
 
 ## Use-Case: Confirmation Modal
 
