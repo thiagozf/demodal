@@ -1,5 +1,5 @@
 <p align="center">
-  <img height="140" src="media/unmodal.png" alt="React Unmodal Banner" align="center" />
+  <img height="140" src="media/demodal.png" alt="Demodal Banner" align="center" />
 </p>
 
 <br />
@@ -11,10 +11,10 @@
 
 <div align="center">
 
-[![GitHub Actions](https://img.shields.io/github/workflow/status/thiagozf/react-unmodal/react-unmodal%20tests?style=for-the-badge&labelColor=4147dc&logo=github&logoColor=white)](https://github.com/thiagozf/react-unmodal/actions?query=workflow%3A%22react-unmodal+tests%22)
-![Coverage](https://img.shields.io/codecov/c/gh/thiagozf/react-unmodal?style=for-the-badge&labelColor=4147dc&logo=codecov&logoColor=white)
-![NPM bundle size](https://img.shields.io/bundlephobia/minzip/react-unmodal?style=for-the-badge&labelColor=4147dc&logoColor=white)
-[![Twitter Badge](https://img.shields.io/badge/%23ReactUnmodal-4147dc?style=for-the-badge&labelColor=4147dc&logo=twitter&logoColor=white)](https://twitter.com/intent/tweet?button_hashtag=ReactUnmodal)
+[![GitHub Actions](https://img.shields.io/github/workflow/status/thiagozf/demodal/demodal%20tests?style=for-the-badge&labelColor=4147dc&logo=github&logoColor=white)](https://github.com/thiagozf/demodal/actions?query=workflow%3A%22demodal+tests%22)
+![Coverage](https://img.shields.io/codecov/c/gh/thiagozf/demodal?style=for-the-badge&labelColor=4147dc&logo=codecov&logoColor=white)
+![NPM bundle size](https://img.shields.io/bundlephobia/minzip/demodal?style=for-the-badge&labelColor=4147dc&logoColor=white)
+[![Twitter Badge](https://img.shields.io/badge/%23Demodal-4147dc?style=for-the-badge&labelColor=4147dc&logo=twitter&logoColor=white)](https://twitter.com/intent/tweet?button_hashtag=Demodal)
 
 </div>
 
@@ -31,18 +31,18 @@
 
 ## Examples
 
-Try it on CodeSandbox or browse the [examples folder](https://github.com/thiagozf/react-unmodal/tree/main/examples).
+Try it on CodeSandbox or browse the [examples folder](https://github.com/thiagozf/demodal/tree/main/examples).
 
-[![Unmodal Examples](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/thiagozf/react-unmodal/tree/main/examples/basic)
+[![Demodal Examples](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/thiagozf/demodal/tree/main/examples/basic)
 
 ## Basic Usage
 
 ```jsx
-import Unmodal from 'react-unmodal'
+import Demodal from 'demodal'
 import MyModal from './MyModal'
 
 // ...
-const result = await Unmodal.open(MyModal, { myModalProp: 'value' })
+const result = await Demodal.open(MyModal, { myModalProp: 'value' })
 // Do something with result
 ```
 
@@ -52,10 +52,10 @@ const result = await Unmodal.open(MyModal, { myModalProp: 'value' })
 /**
  * confirm.js
  */
-import { Unmodal, useModal } from 'react-unmodal'
+import { Demodal, useModal } from 'demodal'
 
-// Register your Confirm modal wrapping it with `Unmodal.create`
-const Confirm = Unmodal.create(
+// Register your Confirm modal wrapping it with `Demodal.create`
+const Confirm = Demodal.create(
   ({ title = 'Confirmation', message = 'Do you confirm this action?' }) => {
     // useModal hook to control UI components
     const modal = useModal()
@@ -79,7 +79,7 @@ const Confirm = Unmodal.create(
 )
 
 // Create a custom confirm function
-export const confirm = props => Unmodal.open(Confirm, props)
+export const confirm = props => Demodal.open(Confirm, props)
 
 /**
  * page.js
@@ -101,14 +101,14 @@ export const Page = () => {
 /**
  * app.js
  */
-import { Unmodal } from 'react-unmodal'
+import { Demodal } from 'demodal'
 
 function App() {
-  // Remember to wrap your app with Unmodal.Provider
+  // Remember to wrap your app with Demodal.Provider
   return (
-    <Unmodal.Provider>
+    <Demodal.Provider>
       <Page />
-    </Unmodal.Provider>
+    </Demodal.Provider>
   )
 }
 ```
@@ -122,7 +122,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/thiagozf"><img src="https://avatars.githubusercontent.com/u/4684137?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Thiago Zanivan</b></sub></a><br /><a href="https://github.com/thiagozf/react-unmodal/commits?author=thiagozf" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/thiagozf"><img src="https://avatars.githubusercontent.com/u/4684137?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Thiago Zanivan</b></sub></a><br /><a href="https://github.com/thiagozf/demodal/commits?author=thiagozf" title="Code">💻</a></td>
   </tr>
 </table>
 

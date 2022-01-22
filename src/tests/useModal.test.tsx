@@ -5,11 +5,11 @@ import {
   waitForElementToBeRemoved,
   act,
 } from '@testing-library/react'
-import { Unmodal, useModal, UnmodalHandler } from '../index'
+import { Demodal, useModal, DemodalHandler } from '../index'
 import { ErrorBoundary, HocTestModal } from './utils'
 
 const testUseModal = async (
-  modal: UnmodalHandler,
+  modal: DemodalHandler,
   props: { name?: string } = {}
 ) => {
   let modalTextElement = screen.queryByText('HocTestModal')
@@ -59,24 +59,24 @@ describe('useModal', () => {
 
   it('gets modal by ID (register)', async () => {
     const hocTestModalId = 'hoc-test-modal'
-    Unmodal.register(hocTestModalId, HocTestModal)
-    let modal!: UnmodalHandler
+    Demodal.register(hocTestModalId, HocTestModal)
+    let modal!: DemodalHandler
     const App = () => {
       modal = useModal(hocTestModalId)
-      return <Unmodal.Provider />
+      return <Demodal.Provider />
     }
     render(<App />)
     await testUseModal(modal)
   })
 
   it('gets modal by ID (JSX)', async () => {
-    let modal!: UnmodalHandler
+    let modal!: DemodalHandler
     const App = () => {
       modal = useModal('mytestmodal')
       return (
-        <Unmodal.Provider>
+        <Demodal.Provider>
           <HocTestModal id="mytestmodal" name="bood" />
-        </Unmodal.Provider>
+        </Demodal.Provider>
       )
     }
     render(<App />)
@@ -84,13 +84,13 @@ describe('useModal', () => {
   })
 
   it('gets modal by ID (Register)', async () => {
-    let modal!: UnmodalHandler
+    let modal!: DemodalHandler
     const App = () => {
       modal = useModal('mytestmodal2')
       return (
-        <Unmodal.Provider>
-          <Unmodal.Register id="mytestmodal2" component={HocTestModal} />
-        </Unmodal.Provider>
+        <Demodal.Provider>
+          <Demodal.Register id="mytestmodal2" component={HocTestModal} />
+        </Demodal.Provider>
       )
     }
     render(<App />)
@@ -98,10 +98,10 @@ describe('useModal', () => {
   })
 
   it('registers unseen components', async () => {
-    let modal!: UnmodalHandler
+    let modal!: DemodalHandler
     const App = () => {
       modal = useModal(HocTestModal, { name: 'bood' })
-      return <Unmodal.Provider />
+      return <Demodal.Provider />
     }
     render(<App />)
     await testUseModal(modal)

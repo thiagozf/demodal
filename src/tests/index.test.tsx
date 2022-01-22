@@ -5,22 +5,22 @@ import {
   waitForElementToBeRemoved,
   act,
 } from '@testing-library/react'
-import { Unmodal, useModal } from '../index'
+import { Demodal, useModal } from '../index'
 import { TestModal, HocTestModal } from './utils'
 
-describe('Unmodal', () => {
+describe('Demodal', () => {
   it('throws error without Provider', async () => {
     expect.assertions(1)
-    return expect(Unmodal.open('test-modal-without-provider')).rejects.toThrow(
-      '"unmodal/open" action must be used within the Unmodal.Provider'
+    return expect(Demodal.open('test-modal-without-provider')).rejects.toThrow(
+      '"demodal/open" action must be used within the Demodal.Provider'
     )
   })
 
   it('renders children', () => {
     render(
-      <Unmodal.Provider>
+      <Demodal.Provider>
         <span>learn nice modal</span>
-      </Unmodal.Provider>
+      </Demodal.Provider>
     )
     const childText = screen.getByText(/learn nice modal/i)
     expect(childText).toBeInTheDocument()
@@ -28,19 +28,19 @@ describe('Unmodal', () => {
 
   it('opens and closes modal by ID', async () => {
     const hocTestModalId = 'hoc-test-modal'
-    Unmodal.register(hocTestModalId, HocTestModal)
-    render(<Unmodal.Provider />)
+    Demodal.register(hocTestModalId, HocTestModal)
+    render(<Demodal.Provider />)
     let modalTextElement = screen.queryByText('HocTestModal')
     expect(modalTextElement).not.toBeInTheDocument()
 
     act(() => {
-      Unmodal.open(hocTestModalId)
+      Demodal.open(hocTestModalId)
     })
     modalTextElement = screen.queryByText('HocTestModal')
     expect(modalTextElement).toBeInTheDocument()
 
     act(() => {
-      Unmodal.close(hocTestModalId)
+      Demodal.close(hocTestModalId)
     })
     modalTextElement = screen.queryByText('HocTestModal')
     expect(modalTextElement).toBeInTheDocument()
@@ -49,7 +49,7 @@ describe('Unmodal', () => {
   })
 
   it('opens and closes modal by component', async () => {
-    const HocTestModal = Unmodal.create(({ name = 'nate' }) => {
+    const HocTestModal = Demodal.create(({ name = 'nate' }) => {
       const modal = useModal()
       const remove = () => modal.remove()
 
@@ -60,18 +60,18 @@ describe('Unmodal', () => {
         </TestModal>
       )
     })
-    render(<Unmodal.Provider />)
+    render(<Demodal.Provider />)
     let modalTextElement = screen.queryByText('HocTestModal')
     expect(modalTextElement).not.toBeInTheDocument()
 
     act(() => {
-      Unmodal.open(HocTestModal)
+      Demodal.open(HocTestModal)
     })
     modalTextElement = screen.queryByText('HocTestModal')
     expect(modalTextElement).toBeInTheDocument()
 
     act(() => {
-      Unmodal.close(HocTestModal)
+      Demodal.close(HocTestModal)
     })
     modalTextElement = screen.queryByText('HocTestModal')
     expect(modalTextElement).toBeInTheDocument()
@@ -80,10 +80,10 @@ describe('Unmodal', () => {
   })
 
   it(`does nothing with unregistered IDs`, () => {
-    render(<Unmodal.Provider />)
+    render(<Demodal.Provider />)
     act(() => {
-      Unmodal.open('abc')
-      Unmodal.close('abc')
+      Demodal.open('abc')
+      Demodal.close('abc')
     })
   })
 })

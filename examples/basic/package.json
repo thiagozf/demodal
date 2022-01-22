@@ -12,7 +12,7 @@
     "@mui/material": "^5.3.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-unmodal": "latest",
+    "demodal": "latest",
     "react-scripts": "3.0.1"
   },
   "devDependencies": {

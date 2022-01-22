@@ -1,17 +1,17 @@
 {
-  "name": "react-unmodal",
+  "name": "demodal",
   "version": "0.0.0-development",
   "description": "Promise-based utility to control modal states in React",
   "author": "thiagozf",
   "license": "MIT",
-  "repository": "thiagozf/react-unmodal",
-  "homepage": "https://github.com/thiagozf/react-unmodal#readme",
+  "repository": "thiagozf/demodal",
+  "homepage": "https://github.com/thiagozf/demodal#readme",
   "funding": {
     "type": "github",
     "url": "https://github.com/sponsors/thiagozf"
   },
   "main": "lib/index.js",
-  "unpkg": "dist/react-unmodal.development.js",
+  "unpkg": "dist/demodal.development.js",
   "types": "types/index.d.ts",
   "module": "es/index.js",
   "sideEffects": [

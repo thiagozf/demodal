@@ -1,8 +1,8 @@
-const idProp = 'UnmodalId'
+const idProp = 'DemodalId'
 
 let id = 0
 
-const generate = () => `__unmodal_${id++}`
+const generate = () => `__demodal_${id++}`
 
 export const getModalId = (modal: any): string => {
   if (typeof modal === 'string') {

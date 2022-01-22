@@ -1,7 +1,7 @@
-import type { UnmodalHandler } from '../types'
+import type { DemodalHandler } from '../types'
 
 export const muiDialog = (
-  modal: UnmodalHandler
+  modal: DemodalHandler
 ): {
   open: boolean
   onClose: () => void

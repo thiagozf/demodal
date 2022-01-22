@@ -5,6 +5,6 @@ module.exports = {
   testMatch: ['<rootDir>/src/**/*.test.{tsx,ts}'],
   testPathIgnorePatterns: ['<rootDir>/types/'],
   moduleNameMapper: {
-    'react-unmodal': '<rootDir>/src/index.ts',
+    demodal: '<rootDir>/src/index.ts',
   },
 }

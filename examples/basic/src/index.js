@@ -8,14 +8,14 @@ import DialogContent from '@mui/material/DialogContent'
 import DialogContentText from '@mui/material/DialogContentText'
 import DialogTitle from '@mui/material/DialogTitle'
 import Slide from '@mui/material/Slide'
-import { Unmodal, useModal } from 'react-unmodal'
-import { muiDialog } from 'react-unmodal/material-ui'
+import { Demodal, useModal } from 'demodal'
+import { muiDialog } from 'demodal/material-ui'
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />
 })
 
-const MyMuiModal = Unmodal.create(({ name }) => {
+const MyMuiModal = Demodal.create(({ name }) => {
   const modal = useModal()
 
   const resolve = value => () => {
@@ -28,7 +28,7 @@ const MyMuiModal = Unmodal.create(({ name }) => {
       <DialogTitle id="alert-dialog-slide-title">Hello, {name}!</DialogTitle>
       <DialogContent>
         <DialogContentText id="alert-dialog-slide-description">
-          Let Unmodal help you with the heavy lifting{' '}
+          Let Demodal help you with the heavy lifting{' '}
           <span role="img" aria-label="">
             😎
           </span>
@@ -48,7 +48,7 @@ const MyMuiModal = Unmodal.create(({ name }) => {
 
 const Page = () => {
   const handleClick = async () => {
-    const result = await Unmodal.open(MyMuiModal, { name: 'World' })
+    const result = await Demodal.open(MyMuiModal, { name: 'World' })
     console.log(result)
   }
 
@@ -68,9 +68,9 @@ const Page = () => {
 
 function App() {
   return (
-    <Unmodal.Provider>
+    <Demodal.Provider>
       <Page />
-    </Unmodal.Provider>
+    </Demodal.Provider>
   )
 }
 

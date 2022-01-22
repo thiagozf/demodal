@@ -7,9 +7,8 @@
    viewBox="0 0 732.36088 229.31829"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1.1 (50ffc5b540, 2022-01-11)"
-   sodipodi:docname="unmodal.svg"
-   inkscape:export-filename="/home/thiagozf/Documents/unmodal.png"
+   inkscape:version="1.1.1 (26b7af14f2, 2022-01-19)"
+   sodipodi:docname="demodal.svg"
    inkscape:export-xdpi="25.4"
    inkscape:export-ydpi="25.4"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -36,7 +35,7 @@
      inkscape:snap-text-baseline="false"
      inkscape:zoom="0.16"
      inkscape:cx="737.5"
-     inkscape:cy="434.375"
+     inkscape:cy="431.25"
      inkscape:window-width="1920"
      inkscape:window-height="1006"
      inkscape:window-x="1920"
@@ -72,7 +71,6 @@
        style="fill:#f3f4f8;fill-opacity:1;stroke-width:9.93645"
        d="m 328.2168,297.97266 c -4.2503,0.86533 -8.27233,2.34761 -11.9668,4.34961 3.69448,-2.002 7.7165,-3.48428 11.9668,-4.34961 z m 799.6602,0 c 3.7902,0.77167 7.3758,2.07387 10.7324,3.75781 -3.357,-1.68426 -6.9417,-2.98604 -10.7324,-3.75781 z m -815.20903,6.52148 c -2.31078,1.55857 -4.46242,3.33352 -6.42578,5.29688 1.96336,-1.96337 4.11499,-3.73831 6.42578,-5.29688 z m 832.18553,1.06836 c 1.2288,0.90456 2.4047,1.87005 3.5293,2.89648 -1.1246,-1.02646 -2.3005,-1.99189 -3.5293,-2.89648 z M 293.54492,477.09766 v 643.26174 c 0,24.0708 19.37839,43.4492 43.44922,43.4492 h 782.10546 c 24.0708,0 43.4492,-19.3784 43.4492,-43.4492 V 477.09766 Z"
        transform="scale(0.26458333)"
-       inkscape:export-filename="/home/thiagozf/Documents/rect1244.png"
        inkscape:export-xdpi="25.4"
        inkscape:export-ydpi="25.4" />
     <path
@@ -80,7 +78,6 @@
        style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#4147dc;fill-opacity:1;stroke-width:9.93645;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
        d="m 336.99414,297.09375 c -24.07083,0 -43.44922,19.37839 -43.44922,43.44922 V 477.09766 H 1162.5488 V 340.54297 c 0,-24.07083 -19.3784,-43.44922 -43.4492,-43.44922 z"
        transform="scale(0.26458333)"
-       inkscape:export-filename="/home/thiagozf/Documents/rect1244.png"
        inkscape:export-xdpi="25.4"
        inkscape:export-ydpi="25.4" />
     <circle
@@ -89,7 +86,6 @@
        cx="102.48043"
        cy="103.05255"
        r="8"
-       inkscape:export-filename="/home/thiagozf/Documents/rect1244.png"
        inkscape:export-xdpi="25.4"
        inkscape:export-ydpi="25.4" />
     <circle
@@ -98,7 +94,6 @@
        cx="128.5873"
        cy="103.05254"
        r="8"
-       inkscape:export-filename="/home/thiagozf/Documents/rect1244.png"
        inkscape:export-xdpi="25.4"
        inkscape:export-ydpi="25.4" />
     <circle
@@ -107,7 +102,6 @@
        cx="154.69418"
        cy="103.05254"
        r="8"
-       inkscape:export-filename="/home/thiagozf/Documents/rect1244.png"
        inkscape:export-xdpi="25.4"
        inkscape:export-ydpi="25.4" />
     <text
@@ -116,21 +110,19 @@
        x="94.453926"
        y="263.54761"
        id="text5183"
-       inkscape:export-filename="/home/thiagozf/Documents/rect1244.png"
        inkscape:export-xdpi="25.4"
        inkscape:export-ydpi="25.4"><tspan
          sodipodi:role="line"
          id="tspan5181"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:153.771px;font-family:Poppins;-inkscape-font-specification:'Poppins, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:0.523043;stroke-width:3.8443"
          x="94.453926"
-         y="263.54761">Un</tspan></text>
+         y="263.54761">De</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:153.771px;line-height:1.25;font-family:Poppins;-inkscape-font-specification:Poppins;display:inline;fill:#4147dc;fill-opacity:1;stroke:none;stroke-width:3.8443"
        x="314.57831"
        y="263.54761"
        id="text5183-8"
-       inkscape:export-filename="/home/thiagozf/Documents/rect1244.png"
        inkscape:export-xdpi="25.4"
        inkscape:export-ydpi="25.4"><tspan
          sodipodi:role="line"

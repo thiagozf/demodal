@@ -7,21 +7,17 @@ import commonJS from 'rollup-plugin-commonjs'
 import visualizer from 'rollup-plugin-visualizer'
 import replace from '@rollup/plugin-replace'
 
-const external = ['react', 'react-dom', 'react-unmodal']
+const external = ['react', 'react-dom', 'demodal']
 
 const globals = {
   react: 'React',
   'react-dom': 'ReactDOM',
-  'react-unmodal': 'ReactUnmodal',
+  demodal: 'Demodal',
 }
 
 const inputSrcs = [
-  ['src/index.ts', 'ReactUnmodal', 'react-unmodal'],
-  [
-    'src/material-ui/index.ts',
-    'ReactUnmodalMaterialUi',
-    'material-ui',
-  ],
+  ['src/index.ts', 'Demodal', 'demodal'],
+  ['src/material-ui/index.ts', 'DemodalMaterialUi', 'material-ui'],
 ]
 
 const extensions = ['.js', '.jsx', '.es6', '.es', '.mjs', '.ts', '.tsx']

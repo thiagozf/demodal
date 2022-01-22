@@ -28,7 +28,7 @@
       }
     ],
     "import/no-cycle": "error",
-    "import/no-unresolved": ["error", { "ignore": ["react-unmodal"] }],
+    "import/no-unresolved": ["error", { "ignore": ["demodal"] }],
     "import/no-unused-modules": ["off", { "unusedExports": true }],
     "no-redeclare": "off"
   }

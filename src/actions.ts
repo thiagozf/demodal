@@ -1,16 +1,16 @@
-import { UnmodalArgs } from './types'
+import { DemodalArgs } from './types'
 
-export type UnmodalAction =
+export type DemodalAction =
   | {
-      type: 'unmodal/open'
-      payload: { id: string; args?: UnmodalArgs }
+      type: 'demodal/open'
+      payload: { id: string; args?: DemodalArgs }
     }
-  | { type: 'unmodal/close'; payload: { id: string } }
-  | { type: 'unmodal/remove'; payload: { id: string } }
+  | { type: 'demodal/close'; payload: { id: string } }
+  | { type: 'demodal/remove'; payload: { id: string } }
 
-export function showModal(id: string, args?: UnmodalArgs): UnmodalAction {
+export function showModal(id: string, args?: DemodalArgs): DemodalAction {
   return {
-    type: 'unmodal/open',
+    type: 'demodal/open',
     payload: {
       id,
       args,
@@ -18,18 +18,18 @@ export function showModal(id: string, args?: UnmodalArgs): UnmodalAction {
   }
 }
 
-export function hideModal(id: string): UnmodalAction {
+export function hideModal(id: string): DemodalAction {
   return {
-    type: 'unmodal/close',
+    type: 'demodal/close',
     payload: {
       id,
     },
   }
 }
 
-export function removeModal(id: string): UnmodalAction {
+export function removeModal(id: string): DemodalAction {
   return {
-    type: 'unmodal/remove',
+    type: 'demodal/remove',
     payload: {
       id,
     },

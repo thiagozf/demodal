@@ -6,12 +6,9 @@
     "emitDeclarationOnly": true,
     "noEmit": false,
     "paths": {
-      "react-unmodal": ["./src/index.ts"]
+      "demodal": ["./src/index.ts"]
     }
   },
-  "files": [
-    "./src/index.ts",
-    "./src/material-ui/index.ts",
-  ],
+  "files": ["./src/index.ts", "./src/material-ui/index.ts"],
   "exclude": ["./src/**/*"]
 }

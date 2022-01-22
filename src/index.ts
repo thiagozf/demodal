@@ -1,5 +1,5 @@
-// Unmodal
-export * from './Unmodal'
+// Demodal
+export * from './Demodal'
 
 // Types
 export * from './types'

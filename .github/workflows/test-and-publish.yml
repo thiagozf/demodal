@@ -1,4 +1,4 @@
-name: react-unmodal tests
+name: demodal tests
 
 on:
   push:
@@ -34,7 +34,7 @@ jobs:
     name: 'Publish Module to NPM'
     needs: test
     # publish only when merged in main on original repo, not on PR
-    if: github.repository == 'thiagozf/react-unmodal' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/next' || github.ref == 'refs/heads/beta')
+    if: github.repository == 'thiagozf/demodal' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/next' || github.ref == 'refs/heads/beta')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

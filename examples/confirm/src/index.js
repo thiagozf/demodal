@@ -1,13 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Unmodal } from 'react-unmodal'
+import { Demodal } from 'demodal'
 import { Page } from './page'
 
 function App() {
   return (
-    <Unmodal.Provider>
+    <Demodal.Provider>
       <Page />
-    </Unmodal.Provider>
+    </Demodal.Provider>
   )
 }
 

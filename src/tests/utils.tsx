@@ -7,18 +7,18 @@ import {
   waitForElementToBeRemoved,
   act,
 } from '@testing-library/react'
-import { Unmodal, useModal } from '../index'
-import { UnmodalHandler } from '../types'
+import { Demodal, useModal } from '../index'
+import { DemodalHandler } from '../types'
 
 export const delay = (t: number) =>
   new Promise(resolve => setTimeout(resolve, t))
 
 export const testHelper = async (
   Modal: React.ComponentType<any>,
-  helper: (modal: UnmodalHandler) => Object,
+  helper: (modal: DemodalHandler) => Object,
   text: string
 ) => {
-  const HocModal = Unmodal.create(({ name }: { name: string }) => {
+  const HocModal = Demodal.create(({ name }: { name: string }) => {
     const modal = useModal()
     return (
       <Modal {...helper(modal)}>
@@ -28,16 +28,16 @@ export const testHelper = async (
   })
 
   render(
-    <Unmodal.Provider>
+    <Demodal.Provider>
       <HocModal id="helper-modal" name={text} />
-    </Unmodal.Provider>
+    </Demodal.Provider>
   )
 
   let modalTextElement = screen.queryByText(text)
   expect(modalTextElement).not.toBeInTheDocument()
 
   act(() => {
-    Unmodal.open('helper-modal', { name: text })
+    Demodal.open('helper-modal', { name: text })
   })
 
   modalTextElement = screen.queryByText(text)
@@ -120,7 +120,7 @@ export const TestModal = ({
   )
 }
 
-export const HocTestModal = Unmodal.create(
+export const HocTestModal = Demodal.create(
   ({ name = 'nate' }: { name: string }) => {
     const modal = useModal()
     const remove = () => modal.remove()

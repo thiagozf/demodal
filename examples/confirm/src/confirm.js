@@ -6,16 +6,16 @@ import DialogContent from '@mui/material/DialogContent'
 import DialogContentText from '@mui/material/DialogContentText'
 import DialogTitle from '@mui/material/DialogTitle'
 import Slide from '@mui/material/Slide'
-import { Unmodal, useModal } from 'react-unmodal'
-import { muiDialog } from 'react-unmodal/material-ui'
+import { Demodal, useModal } from 'demodal'
+import { muiDialog } from 'demodal/material-ui'
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />
 })
 
-// Register the Confirm modal wrapping it with Unmodal.create
+// Register the Confirm modal wrapping it with Demodal.create
 // Props come from modal.open()
-const Confirm = Unmodal.create(
+const Confirm = Demodal.create(
   ({
     title = 'Confirmation',
     message = 'Do you confirm this action?',
@@ -31,7 +31,7 @@ const Confirm = Unmodal.create(
       modal.close()
     }
 
-    // "muiDialog" helper function binds react-unmodal with Material UI's Dialog component
+    // "muiDialog" helper function binds demodal with Material UI's Dialog component
     return (
       <Dialog TransitionComponent={Transition} {...muiDialog(modal)}>
         <DialogTitle id="alert-dialog-slide-title">{title}</DialogTitle>
@@ -52,4 +52,4 @@ const Confirm = Unmodal.create(
 )
 
 // Exports just a function that returns a promise with the result
-export const confirm = props => Unmodal.open(Confirm, props)
+export const confirm = props => Demodal.open(Confirm, props)
