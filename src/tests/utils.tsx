@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-import React, { ErrorInfo, useEffect, useRef } from 'react'
+import React, { ErrorInfo, useEffect } from 'react'
 import {
   render,
   screen,
