@@ -1,7 +1,12 @@
 /**
  * Object passed to modal component as props
  */
-export interface DemodalArgs extends Record<string, unknown> {}
+export type DemodalArgs<P = any> = P & {
+  id: string
+  containerId?: string
+}
+
+export type DemodalComponent<P = any> = (props: P) => JSX.Element | null
 
 /**
  * The params of useModal hook.
@@ -9,7 +14,7 @@ export interface DemodalArgs extends Record<string, unknown> {}
 export type UseModalParams =
   | []
   | [id: string]
-  | [Comp: React.ElementType, args?: DemodalArgs]
+  | [Comp: DemodalComponent, args?: DemodalArgs]
 
 /**
  * Modal handler returned by {@link useModal | useModal} hook.
@@ -52,6 +57,6 @@ export interface DemodalHandler {
   remove: () => void
 }
 
-export interface DemodalHocProps extends Record<string, unknown> {
-  id: string
+export interface DemodalContainer {
+  containerId?: string
 }

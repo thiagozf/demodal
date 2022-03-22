@@ -9,27 +9,10 @@ import { Demodal, useModal } from '../index'
 import { TestModal, HocTestModal } from './utils'
 
 describe('Demodal', () => {
-  it('throws error without Provider', async () => {
-    expect.assertions(1)
-    return expect(Demodal.open('test-modal-without-provider')).rejects.toThrow(
-      '"demodal/open" action must be used within the Demodal.Provider'
-    )
-  })
-
-  it('renders children', () => {
-    render(
-      <Demodal.Provider>
-        <span>learn nice modal</span>
-      </Demodal.Provider>
-    )
-    const childText = screen.getByText(/learn nice modal/i)
-    expect(childText).toBeInTheDocument()
-  })
-
   it('opens and closes modal by ID', async () => {
     const hocTestModalId = 'hoc-test-modal'
     Demodal.register(hocTestModalId, HocTestModal)
-    render(<Demodal.Provider />)
+    render(<Demodal.Container />)
     let modalTextElement = screen.queryByText('HocTestModal')
     expect(modalTextElement).not.toBeInTheDocument()
 
@@ -49,18 +32,20 @@ describe('Demodal', () => {
   })
 
   it('opens and closes modal by component', async () => {
-    const HocTestModal = Demodal.create(({ name = 'nate' }) => {
-      const modal = useModal()
-      const remove = () => modal.remove()
+    const HocTestModal = Demodal.create(
+      ({ name = 'nate' }: { name: string }) => {
+        const modal = useModal()
+        const remove = () => modal.remove()
 
-      return (
-        <TestModal isOpen={modal.isOpen} onExited={remove} onClose={remove}>
-          <label>{name}</label>
-          <div>HocTestModal</div>
-        </TestModal>
-      )
-    })
-    render(<Demodal.Provider />)
+        return (
+          <TestModal isOpen={modal.isOpen} onExited={remove} onClose={remove}>
+            <label>{name}</label>
+            <div>HocTestModal</div>
+          </TestModal>
+        )
+      }
+    )
+    render(<Demodal.Container />)
     let modalTextElement = screen.queryByText('HocTestModal')
     expect(modalTextElement).not.toBeInTheDocument()
 
@@ -80,7 +65,7 @@ describe('Demodal', () => {
   })
 
   it(`does nothing with unregistered IDs`, () => {
-    render(<Demodal.Provider />)
+    render(<Demodal.Container />)
     act(() => {
       Demodal.open('abc')
       Demodal.close('abc')

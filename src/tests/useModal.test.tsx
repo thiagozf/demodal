@@ -6,7 +6,7 @@ import {
   act,
 } from '@testing-library/react'
 import { Demodal, useModal, DemodalHandler } from '../index'
-import { ErrorBoundary, HocTestModal } from './utils'
+import { HocTestModal } from './utils'
 
 const testUseModal = async (
   modal: DemodalHandler,
@@ -46,38 +46,13 @@ const testUseModal = async (
 }
 
 describe('useModal', () => {
-  it('throws error without Provider', () => {
-    console.error = () => null
-    render(
-      <ErrorBoundary>
-        {/* @ts-ignore */}
-        <HocTestModal />
-      </ErrorBoundary>
-    )
-    expect(screen.queryByText('Something went wrong.')).toBeInTheDocument()
-  })
-
   it('gets modal by ID (register)', async () => {
     const hocTestModalId = 'hoc-test-modal'
     Demodal.register(hocTestModalId, HocTestModal)
     let modal!: DemodalHandler
     const App = () => {
       modal = useModal(hocTestModalId)
-      return <Demodal.Provider />
-    }
-    render(<App />)
-    await testUseModal(modal)
-  })
-
-  it('gets modal by ID (JSX)', async () => {
-    let modal!: DemodalHandler
-    const App = () => {
-      modal = useModal('mytestmodal')
-      return (
-        <Demodal.Provider>
-          <HocTestModal id="mytestmodal" name="bood" />
-        </Demodal.Provider>
-      )
+      return <Demodal.Container />
     }
     render(<App />)
     await testUseModal(modal)
@@ -88,9 +63,10 @@ describe('useModal', () => {
     const App = () => {
       modal = useModal('mytestmodal2')
       return (
-        <Demodal.Provider>
+        <div>
           <Demodal.Register id="mytestmodal2" component={HocTestModal} />
-        </Demodal.Provider>
+          <Demodal.Container />
+        </div>
       )
     }
     render(<App />)
@@ -101,7 +77,7 @@ describe('useModal', () => {
     let modal!: DemodalHandler
     const App = () => {
       modal = useModal(HocTestModal, { name: 'bood' })
-      return <Demodal.Provider />
+      return <Demodal.Container />
     }
     render(<App />)
     await testUseModal(modal)

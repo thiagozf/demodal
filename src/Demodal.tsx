@@ -1,69 +1,17 @@
-import React, { useEffect, useMemo, useContext, useReducer } from 'react'
-import { DemodalAction, hideModal, removeModal, showModal } from './actions'
+import React, { useEffect, useMemo, useContext } from 'react'
+import { hideModal, removeModal, showModal, useStore } from './store'
 import { callbacks } from './callbacks'
 import { components } from './components'
 import { getModalId } from './id'
 import {
   DemodalArgs,
+  DemodalComponent,
+  DemodalContainer,
   DemodalHandler,
-  DemodalHocProps,
   UseModalParams,
 } from './types'
 
-interface DemodalStore {
-  [id: string]: {
-    id: string
-    args?: DemodalArgs
-    isOpen?: boolean
-  }
-}
-
-const initialState: DemodalStore = {}
-const DemodalContext = React.createContext<DemodalStore>(initialState)
 const DemodalIdContext = React.createContext<string>('')
-
-let dispatch: React.Dispatch<DemodalAction> = (action: DemodalAction) => {
-  throw new Error(
-    `"${action.type}" action must be used within the Demodal.Provider`
-  )
-}
-
-function reducer(state: DemodalStore, action: DemodalAction): DemodalStore {
-  switch (action.type) {
-    case 'demodal/open': {
-      const { id, args } = action.payload
-      const currentState = state[id]!
-      return {
-        ...state,
-        [id]: {
-          ...currentState,
-          args,
-          isOpen: true,
-        },
-      }
-    }
-    case 'demodal/close': {
-      const { id } = action.payload
-      const currentState = state[id]!
-      return {
-        ...state,
-        [id]: {
-          ...currentState,
-          isOpen: false,
-        },
-      }
-    }
-    case 'demodal/remove': {
-      const { id } = action.payload
-      const newState = { ...state }
-      delete newState[id]
-      return newState
-    }
-    /* istanbul ignore next */
-    default:
-      throw new Error(`Unhandled action: ${action}`)
-  }
-}
 
 async function open<T>(
   modal: string | React.ElementType,
@@ -74,7 +22,7 @@ async function open<T>(
     register(id, modal)
   }
 
-  dispatch(showModal(id, args))
+  showModal(id, args)
 
   if (!callbacks[id]) {
     let resolve!: (value: T) => void
@@ -88,24 +36,20 @@ async function open<T>(
 
 function close(modal: string | React.ElementType) {
   const id = getModalId(modal)
-  dispatch(hideModal(id))
+  hideModal(id)
 }
 
 function remove(id: string): void {
-  dispatch(removeModal(id))
+  removeModal(id)
   delete callbacks[id]
 }
 
 export const useModal = (...params: UseModalParams): DemodalHandler => {
   const modal = params[0]
   const args = params[1]
-  const modals = useContext(DemodalContext)
+  const modals = useStore()
   const contextModalId = useContext(DemodalIdContext)
   const id: string = modal ? getModalId(modal) : contextModalId
-
-  if (!id) {
-    throw new Error('useModal is missing the modal ID.')
-  }
 
   useEffect(() => {
     if (modal && typeof modal !== 'string') {
@@ -132,10 +76,12 @@ export const useModal = (...params: UseModalParams): DemodalHandler => {
   )
 }
 
-function create<P>(Comp: React.ElementType) {
-  return ({ id, ...props }: P & DemodalHocProps) => {
+function create<P>(
+  Comp: DemodalComponent<P>
+): DemodalComponent<DemodalArgs<P>> {
+  return ({ id, ...props }) => {
     const { args } = useModal(id)
-    const modals = useContext(DemodalContext)
+    const modals = useStore()
     const modal = modals[id]
 
     if (!modal) {
@@ -160,10 +106,12 @@ function unregister(id: string): void {
   delete components[id]
 }
 
-function DemodalContainer() {
-  const modals = useContext(DemodalContext)
+function Container({ containerId }: DemodalContainer) {
+  const modals = useStore()
   const renderedModals = Object.keys(modals)
-    .filter(id => !!modals[id] && components[id])
+    .filter(
+      id => modals[id]?.args?.containerId === containerId && components[id]
+    )
     .map(id => {
       return {
         id,
@@ -177,23 +125,6 @@ function DemodalContainer() {
         <Component key={id} id={id} {...args} />
       ))}
     </>
-  )
-}
-
-function Provider({
-  children,
-}: {
-  children?: React.ReactNode
-  dispatch?: React.Dispatch<DemodalAction>
-  modals?: DemodalStore
-}) {
-  const [state, dispatcher] = useReducer(reducer, initialState)
-  dispatch = dispatcher
-  return (
-    <DemodalContext.Provider value={state}>
-      {children}
-      <DemodalContainer />
-    </DemodalContext.Provider>
   )
 }
 
@@ -214,7 +145,7 @@ function Register({
 }
 
 export const Demodal = {
-  Provider,
+  Container,
   Register,
   create,
   open,

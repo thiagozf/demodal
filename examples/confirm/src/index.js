@@ -5,9 +5,10 @@ import { Page } from './page'
 
 function App() {
   return (
-    <Demodal.Provider>
+    <div>
       <Page />
-    </Demodal.Provider>
+      <Demodal.Container />
+    </div>
   )
 }
 

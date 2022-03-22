@@ -68,9 +68,10 @@ const Page = () => {
 
 function App() {
   return (
-    <Demodal.Provider>
+    <div>
       <Page />
-    </Demodal.Provider>
+      <Demodal.Container />
+    </div>
   )
 }
 

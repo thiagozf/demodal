@@ -28,9 +28,10 @@ export const testHelper = async (
   })
 
   render(
-    <Demodal.Provider>
+    <div>
       <HocModal id="helper-modal" name={text} />
-    </Demodal.Provider>
+      <Demodal.Container />
+    </div>
   )
 
   let modalTextElement = screen.queryByText(text)
@@ -98,15 +99,12 @@ export const TestModal = ({
   onCancel = () => void 0,
   children,
 }: TestModalProps) => {
-  const lastVisibleRef = useRef(isOpen)
-  const lastVisible = lastVisibleRef.current
   useEffect(() => {
-    if (!isOpen && lastVisible) {
-      setTimeout(onExited, 30)
+    if (!isOpen) {
+      setTimeout(onExited, 10)
     }
-  }, [isOpen, onExited, lastVisible])
+  }, [isOpen, onExited])
 
-  lastVisibleRef.current = isOpen
   return (
     <div>
       TestModal {isOpen} <div>{children}</div>
