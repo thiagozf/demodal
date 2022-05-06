@@ -104,11 +104,12 @@ export const Page = () => {
 import { Demodal } from 'demodal'
 
 function App() {
-  // Remember to wrap your app with Demodal.Provider
+  // Remember to add a Demodal.Container to your app's root
   return (
-    <Demodal.Provider>
+    <>
       <Page />
-    </Demodal.Provider>
+      <Demodal.Container />
+    </>
   )
 }
 ```
