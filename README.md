@@ -11,7 +11,7 @@
 
 <div align="center">
 
-[![GitHub Actions](https://img.shields.io/github/workflow/status/thiagozf/demodal/demodal%20tests?style=for-the-badge&labelColor=4147dc&logo=github&logoColor=white)](https://github.com/thiagozf/demodal/actions?query=workflow%3A%22demodal+tests%22)
+[![GitHub Actions](https://img.shields.io/github/actions/workflow/status/thiagozf/demodal/test-and-publish.yml?branch=main&style=for-the-badge&labelColor=4147dc&logo=github&logoColor=white)](https://github.com/thiagozf/demodal/actions)
 [![Coverage](https://img.shields.io/codecov/c/gh/thiagozf/demodal?style=for-the-badge&labelColor=4147dc&logo=codecov&logoColor=white)](https://app.codecov.io/gh/thiagozf/demodal/)
 [![NPM bundle size](https://img.shields.io/bundlephobia/minzip/demodal?style=for-the-badge&labelColor=4147dc&logoColor=white)](https://www.npmjs.com/package/demodal)
 [![Twitter Badge](https://img.shields.io/badge/%23Demodal-4147dc?style=for-the-badge&labelColor=4147dc&logo=twitter&logoColor=white)](https://twitter.com/intent/tweet?url=https://github.com/thiagozf/demodal&text=Promise-based%20utility%20to%20control%20modal%20states%20in%20React!&hashtags=react,demodal)
