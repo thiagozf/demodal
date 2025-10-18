@@ -63,12 +63,15 @@ const Confirm = Demodal.create(
     // Once resolved, automatically close the modal
     const resolve = value => () => {
       modal.resolve(value)
-      modal.close()
     }
 
     // "title" and "message" are props sent with "modal.open()"
     return (
-      <Modal open={modal.isOpen} onClose={modal.close} onExited={modal.remove}>
+      <Modal
+        open={modal.isOpen}
+        onClose={resolve(false)}
+        onExited={modal.remove}
+      >
         <div>{title}</div>
         <div>{body}</div>
         <Button onClick={resolve(true)}>Yes</Button>

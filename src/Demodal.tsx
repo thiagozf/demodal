@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useEffect, useMemo, useContext } from 'react'
 import { hideModal, removeModal, showModal, useStore } from './store'
 import { callbacks } from './callbacks'
@@ -67,9 +69,10 @@ export const useModal = (...params: UseModalParams): DemodalHandler => {
       open: (args?: DemodalArgs) => open(id, args),
       close: () => close(id),
       remove: () => remove(id),
-      resolve: (args?: unknown) => {
+      resolve: (args = void 0, { keep = false } = {}) => {
         callbacks[id]?.resolve(args)
         delete callbacks[id]
+        if (!keep) close(id)
       },
     }),
     [id, modalInfo]

@@ -49,7 +49,7 @@ export interface DemodalHandler {
   /**
    * Resolve the promise returned by {@link DemodalHandler.open | open} method.
    */
-  resolve: (args?: unknown) => void
+  resolve: (args?: unknown, options?: { keep?: boolean }) => void
 
   /**
    * Remove the modal component from React component tree.
